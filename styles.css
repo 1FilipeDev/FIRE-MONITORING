@@ -1,0 +1,195 @@
+/* RESET E BASE */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* CORES */
+:root {
+  --primary-color: #2e7d32;
+  --secondary-color: #1b5e20;
+}
+
+/* ================= HEADER ================= */
+header {
+  background-color: var(--primary-color);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ================= LAYOUT ================= */
+.main-content {
+  display: flex;
+  height: calc(100vh - 70px); /* altura total - header */
+}
+
+/* MAPA RESPONSIVO */
+#map {
+  flex: 7;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* FORMULÁRIO */
+form {
+  flex: 3;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ================= INPUTS ================= */
+form h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+/* BOTÕES */
+button, .small-button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ================= TEMA CLARO ================= */
+body {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+form {
+  background-color: white;
+}
+
+input, select {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+/* ================= TEMA ESCURO ================= */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode form {
+  background: #1e1e1e;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode button {
+  background-color: #f44336;
+  color: white;
+}
+
+/* ================= CARD LOGIN ================= */
+.center-container {
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+body.dark-mode .center-container {
+  background-color: #1e1e1e;
+}
+
+body:not(.dark-mode) .center-container {
+  background-color: white;
+}
+/* BOTÃO MENU */
+.menu-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MENU LATERAL */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #1e1e1e;
+  padding-top: 60px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.side-menu a {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.side-menu a:hover {
+  background-color: #333;
+}
+
+/* MENU ABERTO */
+.side-menu.open {
+  right: 0;
+}

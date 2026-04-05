@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoramento de Queimadas</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="wildfire.png" type="image/png"> 
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <header>
+
+<button id="menuToggle" class="menu-button">☰</button>
+<div id="sideMenu" class="side-menu">
+  <a href="index.html">🏠 Início</a>
+  <a href="login.html">🔐 Login</a>
+  <a href="create_account.html">📝 Criar Conta</a>
+  <a href="profile.html">👤 Meu Perfil</a>
+</div>
+    <button id="themeToggle" class="small-button">🌙</button>
+  </header>
+
+  <div class="main-content">
+    <div id="map"></div>
+
+    <form id="reportForm">
+      <h2>Reporte uma Queimada</h2>
+      
+      <label for="location">Localização:</label>
+      <input type="text" id="location" name="location" required placeholder="Digite ou use a localização atual">
+      <button type="button" id="useLocation" class="small-button">Minha Localização</button>
+
+      <label for="level">Nível da Queimada:</label>
+      <select id="level" name="level" required>
+        <option value="1">Baixo</option>
+        <option value="2">Médio</option>
+        <option value="3">Alto</option>
+      </select>
+
+      <label for="category">Tipo de Local:</label>
+      <select id="category" name="category" required onchange="handleCategoryChange()">
+        <option value="lote">Lote</option>
+        <option value="mata">Mata</option>
+        <option value="casa">Casa</option>
+        <option value="outros">Outras</option>
+      </select>
+
+      <div id="otherCategoryContainer" style="display:none;">
+        <label for="otherCategory">Descreva o tipo de local:</label>
+        <input type="text" id="otherCategory" name="otherCategory" placeholder="Especifique o local...">
+      </div>
+
+      <label for="photo">Anexar Foto:</label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+
+      <label for="additionalInfo">Informações Adicionais:</label>
+      <input type="text" id="additionalInfo" name="additionalInfo" placeholder="Descreva a queimada...">
+
+      <button type="submit" class="rounded-button">Enviar Relatório</button>
+    </form>
+  </div>
+ <footer>
+        <p>© 2026 PROJETO ADSIII | Developed by Filipe</p>
+    </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
